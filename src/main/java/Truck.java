@@ -3,4 +3,7 @@
  */
 public class Truck extends Vehicle
 {
+    public Truck(int cargo, fuelType typeOfFuel, double averageConsumption) {
+        super(cargo, typeOfFuel, averageConsumption);
+    }
 }
