@@ -12,9 +12,10 @@ public class TripCalculator {
     // test
     private void readRoutes() throws FileNotFoundException
     {
-        String path = "";
-        File f = new File(path);
-        BufferedReader br = new BufferedReader(new FileReader(f));
+        String path = System.getProperty("Usr.src")+File.separator+"main"+File.separator+"resources";
+        System.out.println(path);
+        //File f = new File(path);
+        //BufferedReader br = new BufferedReader(new FileReader(f));
     }
 
 
