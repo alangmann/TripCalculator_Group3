@@ -18,7 +18,7 @@ public class Route
     }
 
     public enum RouteType {
-        HIGHWAY, COUNTRYROAD, GRAVELROAD
+        Highway, CountryRoad, GravelRoad
     }
 
     public int getSlope() {
