@@ -10,7 +10,7 @@ public class TripCalculator {
 
     // TODO: implement me :)
     // test
-    private void readRoutes() throws FileNotFoundException
+    private void readRoutes() throws Exception
     {
         String path = System.getProperty("Usr.src")+File.separator+"main"+File.separator+"resources";
         System.out.println(path);
