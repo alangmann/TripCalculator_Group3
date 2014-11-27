@@ -14,8 +14,14 @@ public class TripCalculator {
     {
         String path = System.getProperty("Usr.src")+File.separator+"main"+File.separator+"resources";
         System.out.println(path);
-        //File f = new File(path);
-        //BufferedReader br = new BufferedReader(new FileReader(f));
+        File f = new File(path);
+        BufferedReader br = new BufferedReader(new FileReader(f));
+
+        String line = "";
+        while(!(line=br.readLine()).equals(null))
+        {
+
+        }
     }
 
 
