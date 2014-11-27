@@ -10,7 +10,7 @@ public class Route
     private RouteType typeOfRoute;
     private double specialFee;
 
-    public Route(double distance, int slope, RouteType typeOfRoute, double specialFee;) {
+    public Route(double distance, int slope, RouteType typeOfRoute, double specialFee) {
         this.distance = distance;
         this.slope = slope;
         this.typeOfRoute = typeOfRoute;

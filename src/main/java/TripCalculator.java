@@ -23,6 +23,11 @@ public class TripCalculator {
         while(!(line=br.readLine()).equals(null))
         {
             Route r;
+            line.split(";");
+
+
+
+            r = new Route(Integer.parseInt(line[0]), Integer.parseInt(line[1]), );
 
         }
 
