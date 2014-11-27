@@ -1,6 +1,6 @@
 /**
  * Created by Dominik on 27.11.2014.
  */
-public class Truck
+public class Truck extends Vehicle
 {
 }
