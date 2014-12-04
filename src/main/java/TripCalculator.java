@@ -49,5 +49,25 @@ public class TripCalculator {
 
     }
 
+    private void readSpritDB()
+    {
+        ArrayList<String, double, double> spritList = new ArrayList<String, double, double>();
+
+        BufferedReader br = new BufferedReader(new FileReader(f));
+        String line = "";
+
+
+        while(!(line=br.readLine().equals(null)))
+        {
+            //Aufbau= Tag;Diesel;Benzin
+            String[] lines = line.split(";");
+            if(!lines[1].equals("Diesel"))
+            {
+                spritList.add(lines[0], Double.parseDouble(lines[1]), Double.parseDouble(lines[2]));
+            }
+        }
+
+    }
+
 
 }
