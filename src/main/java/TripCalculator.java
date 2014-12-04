@@ -21,7 +21,7 @@ public class TripCalculator {
         String line = "";
         while(!(line=br.readLine()).equals(null))
         {
-            Route r;
+            Route r = new Route();
 
             String[] lines  = line.split(";");
 
