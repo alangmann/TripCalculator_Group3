@@ -2,12 +2,14 @@
 import org.junit.Before;
 import org.junit.Test;
 
+import java.util.ArrayList;
+
 import static org.junit.Assert.assertTrue;
 
 
 public class TripCalculatorTest {
 
-    private TripCalculator trip;
+    public TripCalculator trip;
 
     @Before
     public void setUp() throws Exception {
@@ -15,7 +17,18 @@ public class TripCalculatorTest {
     }
 
     @Test
-    public void testName() throws Exception {
+    public void testReadRoutes() throws Exception
+    {
+        ArrayList<Route> routes =  trip.readRoutes();
 
+        for (int i = 0; i < routes.size(); i++)
+        {
+            System.out.println(routes.get(i));
+        }
+    }
+
+    @org.junit.Test
+    public void testReadSpritDB() throws Exception {
+        trip.readSpritDB();
     }
 }
