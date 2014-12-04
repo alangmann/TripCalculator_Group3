@@ -9,16 +9,21 @@ public class Route
     private int slope;
     private RouteType typeOfRoute;
     private double specialFee;
+    private double routeType;
 
-    public Route(double distance, int slope, RouteType typeOfRoute, double specialFee) {
+    public Route(double distance, int slope, double routeType, double specialFee) {
         this.distance = distance;
         this.slope = slope;
-        this.typeOfRoute = typeOfRoute;
+        this.routeType = routeType;
         this.specialFee = specialFee;
     }
 
     public enum RouteType {
         Highway, CountryRoad, GravelRoad
+    }
+
+    public double getRouteType() {
+        return routeType;
     }
 
     public int getSlope() {

@@ -25,19 +25,19 @@ public class TripCalculator {
 
             String[] lines  = line.split(";");
 
-            if(lines[3].equals(r.getTypeOfRoute().Highway))
+            if(lines[2].equals(r.getTypeOfRoute().Highway))
             {
-                r = new Route(Integer.parseInt(lines[0]), Integer.parseInt(lines[1]), r.getTypeOfRoute().Highway);
+                r = new Route(Integer.parseInt(lines[0]), Integer.parseInt(lines[1]), 1, Double.parseDouble(lines[3]));
                 routes.add(r);
             }
-            else if (lines[3].equals(r.getRouteType().CountryRoad))
+            else if (lines[2].equals(r.getRouteType().CountryRoad))
             {
-                r = new Route(Integer.parseInt(lines[0]), Integer.parseInt(lines[1]), r.getTypeOfRoute().CountryRoad);
+                r = new Route(Integer.parseInt(lines[0]), Integer.parseInt(lines[1]), 1.2, Double.parseDouble(lines[3]));
                 routes.add(r);
             }
             else
             {
-                r = new Route(Integer.parseInt(lines[0]), Integer.parseInt(lines[1]), r.getTypeOfRoute().GravelRoad);
+                r = new Route(Integer.parseInt(lines[0]), Integer.parseInt(lines[1]), 2, Double.parseDouble(lines[3]));
                 routes.add(r);
             }
 
@@ -65,6 +65,17 @@ public class TripCalculator {
             }
         }
 
+    }
+
+    private double calculateComsumption(Route r)
+    {
+        double co2 = 0.1325;
+
+
+        // Berechnung: km x CO2 x slope x Factor of Route type
+        double comsumption = r.getDistance() * co2 * r.getSlope() * r.routeType();
+
+        return comsumption;
     }
 
 
