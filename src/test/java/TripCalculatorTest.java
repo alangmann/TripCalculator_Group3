@@ -23,7 +23,7 @@ public class TripCalculatorTest {
 
         for (int i = 0; i < routes.size(); i++)
         {
-            System.out.println(routes.get(i));
+            System.out.println(""+routes.get(i));
         }
     }
 
