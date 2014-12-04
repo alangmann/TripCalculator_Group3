@@ -18,6 +18,11 @@ public class Route
         this.specialFee = specialFee;
     }
 
+    public Route()
+    {
+
+    }
+
     public enum RouteType {
         Highway, CountryRoad, GravelRoad
     }
