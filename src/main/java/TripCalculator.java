@@ -26,22 +26,21 @@ public class TripCalculator {
 
             String[] lines  = line.split(";");
 
-            if(lines[3].equals(r.getRouteType().Highway))
+            if(lines[3].equals(r.getTypeOfRoute().Highway))
             {
-                r = new Route(Integer.parseInt(lines[0]), Integer.parseInt(lines[1]), r.getRouteType().Highway);
+                r = new Route(Integer.parseInt(lines[0]), Integer.parseInt(lines[1]), r.getTypeOfRoute().Highway);
                 routes.add(r);
             }
             else if (lines[3].equals(r.getRouteType().CountryRoad))
             {
-                r = new Route(Integer.parseInt(lines[0]), Integer.parseInt(lines[1]), r.getRouteType().CountryRoad);
+                r = new Route(Integer.parseInt(lines[0]), Integer.parseInt(lines[1]), r.getTypeOfRoute().CountryRoad);
                 routes.add(r);
             }
             else
             {
-                r = new Route(Integer.parseInt(lines[0]), Integer.parseInt(lines[1]), r.getRouteType().GravelRoad);
+                r = new Route(Integer.parseInt(lines[0]), Integer.parseInt(lines[1]), r.getTypeOfRoute().GravelRoad);
                 routes.add(r);
             }
-
 
         }
 
