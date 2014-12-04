@@ -11,12 +11,12 @@ public class TripCalculatorTest {
 
     public TripCalculator trip;
 
-    @Before
+    @org.junit.Before
     public void setUp() throws Exception {
         trip = new TripCalculator();
     }
 
-    @Test
+    @org.junit.Test
     public void testReadRoutes() throws Exception
     {
         ArrayList<Route> routes =  trip.readRoutes();

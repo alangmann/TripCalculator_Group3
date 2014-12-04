@@ -30,7 +30,7 @@ public class TripCalculator {
                 r = new Route(Integer.parseInt(lines[0]), Integer.parseInt(lines[1]), 1, Double.parseDouble(lines[3]));
                 routes.add(r);
             }
-            else if (lines[2].equals(r.getRouteType().CountryRoad))
+            else if (lines[2].equals(r.getTypeOfRoute().CountryRoad))
             {
                 r = new Route(Integer.parseInt(lines[0]), Integer.parseInt(lines[1]), 1.2, Double.parseDouble(lines[3]));
                 routes.add(r);
@@ -47,21 +47,23 @@ public class TripCalculator {
 
     }
 
-    private void readSpritDB()
+    private void readSpritDB() throws Exception
     {
-        ArrayList<String, double, double> spritList = new ArrayList<String, double, double>();
+        ArrayList<Sprit> spritList = new ArrayList<Sprit>();
 
+        String path = System.getProperty("Usr.src")+File.separator+"main"+File.separator+"resources";
+        System.out.println(path);
+        File f = new File(path);
         BufferedReader br = new BufferedReader(new FileReader(f));
+
         String line = "";
-
-
-        while(!(line=br.readLine().equals(null)))
+        while(!(line=br.readLine()).equals(null))
         {
             //Aufbau= Tag;Diesel;Benzin
             String[] lines = line.split(";");
             if(!lines[1].equals("Diesel"))
             {
-                spritList.add(lines[0], Double.parseDouble(lines[1]), Double.parseDouble(lines[2]));
+                spritList.add(new Sprit(lines[0], Double.parseDouble(lines[1]), Double.parseDouble(lines[2])));
             }
         }
 
@@ -73,7 +75,7 @@ public class TripCalculator {
 
 
         // Berechnung: km x CO2 x slope x Factor of Route type
-        double comsumption = r.getDistance() * co2 * r.getSlope() * r.routeType();
+        double comsumption = r.getDistance() * co2 * r.getSlope() * r.getRouteType();
 
         return comsumption;
     }
