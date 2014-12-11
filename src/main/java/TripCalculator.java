@@ -77,9 +77,16 @@ public class TripCalculator {
     {
         double co2 = 0.1325;
 
-
         // Berechnung: km x CO2 x slope x Factor of Route type
-        double comsumption = r.getDistance() * co2 * r.getSlope() * r.getRouteType();
+
+        double comsumption;
+        if(r.getSlope()<=-5)
+        {
+            comsumption = r.getDistance() * 0 * r.getSlope() * r.getRouteType();
+        }
+        else {
+            comsumption = r.getDistance() * co2 * r.getSlope() * r.getRouteType();
+        }
 
         return comsumption;
     }

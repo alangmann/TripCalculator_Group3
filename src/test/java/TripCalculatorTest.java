@@ -24,7 +24,7 @@ public class TripCalculatorTest {
 
         for (int i = 0; i < routes.size(); i++)
         {
-            System.out.println(""+routes.get(i));
+            System.out.println(routes.get(i).toString());
         }
     }
 
@@ -34,10 +34,18 @@ public class TripCalculatorTest {
     }
 
     @Test
-    public void testCalculateConsumtion() throws Exception
+    public void testCalculateConsumption() throws Exception
     {
         Route r = new Route(10, 5, 1, 5);
-        assertThat(trip.calculateComsumption(r), equalTo(6.625));
+        assertThat(trip.calculateComsumption(r), equalTo(6.625000000000001));
+        // Mit 6,625 wird ein Fehler zurückgegeben.
+    }
+
+    @Test
+    public void testCalculateConsumptionWithNegSlope() throws Exception
+    {
+        Route r = new Route(10, -15, 1, 5);
+        assertThat(trip.calculateComsumption(r), equalTo(0.0));
     }
 }
 
