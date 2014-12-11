@@ -27,7 +27,8 @@ public class Route
         Highway, CountryRoad, GravelRoad
     }
 
-    public double getRouteType() {
+    public double getRouteType()
+    {
         return routeType;
     }
 

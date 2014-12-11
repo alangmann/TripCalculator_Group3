@@ -69,7 +69,7 @@ public class TripCalculator {
 
     }
 
-    private double calculateComsumption(Route r)
+    public double calculateComsumption(Route r)
     {
         double co2 = 0.1325;
 
