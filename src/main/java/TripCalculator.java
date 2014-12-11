@@ -10,7 +10,7 @@ public class TripCalculator {
 
     // TODO: implement me :)
     // test
-    private ArrayList<Route> readRoutes() throws Exception
+    public ArrayList<Route> readRoutes() throws Exception
     {
         ArrayList<Route> routes = new ArrayList<Route>();
         String path = System.getProperty("Usr.src")+File.separator+"main"+File.separator+"resources";
@@ -47,7 +47,7 @@ public class TripCalculator {
 
     }
 
-    private void readSpritDB() throws Exception
+    public void readSpritDB() throws Exception
     {
         ArrayList<Sprit> spritList = new ArrayList<Sprit>();
 
