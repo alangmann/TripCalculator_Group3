@@ -13,13 +13,14 @@ public class TripCalculator {
     public ArrayList<Route> readRoutes() throws Exception
     {
         ArrayList<Route> routes = new ArrayList<Route>();
-        String path = System.getProperty("Usr.src")+File.separator+"main"+File.separator+"resources";
+        String path = System.getProperty("user.dir")+File.separator+"src"+File.separator+"main"+File.separator+"resources"+File.separator+"routes.csv";
         System.out.println(path);
         File f = new File(path);
         BufferedReader br = new BufferedReader(new FileReader(f));
 
         String line = "";
-        while(!(line=br.readLine()).equals(null))
+        String line1=null;
+        while ((line1 = br.readLine()) != null && !(line=br.readLine()).equals(null))
         {
             Route r = new Route();
 
