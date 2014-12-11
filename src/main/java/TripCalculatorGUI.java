@@ -6,7 +6,12 @@ import javax.swing.*;
 public class TripCalculatorGUI {
     private JPanel panel1;
     private JButton btAccept;
-
-    // Test
+    private JRadioButton rbCar;
+    private JRadioButton rbTruck;
+    private JTextField tfConsumption;
+    private JComboBox cbAdBlue;
+    private JComboBox cbFuel;
+    private JTextField tfCargo;
+    private JTextField tfAxles;
 
 }

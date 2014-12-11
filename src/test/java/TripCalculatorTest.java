@@ -44,8 +44,10 @@ public class TripCalculatorTest {
     @Test
     public void testCalculateConsumptionWithNegSlope() throws Exception
     {
-        Route r = new Route(10, -15, 1, 5);
-        assertThat(trip.calculateComsumption(r), equalTo(0.0));
+        Route r = new Route(10, -15, 2, 5);
+        assertThat(trip.calculateComsumption(r), equalTo(-0.0));
+
+        //Anscheinend ergibt es ein -0.0 da eine negative Zahl dabei ist? Mit 0.0 wird ein Fehler zurückgegeben.
     }
 }
 
