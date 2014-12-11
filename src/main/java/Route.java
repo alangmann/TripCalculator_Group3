@@ -6,12 +6,12 @@ public class Route
     // Beispiel: km;slope;routtype;special fee
 
     private double distance;
-    private int slope;
+    private double slope;
     private RouteType typeOfRoute;
     private double specialFee;
     private double routeType;
 
-    public Route(double distance, int slope, double routeType, double specialFee) {
+    public Route(double distance, double slope, double routeType, double specialFee) {
         this.distance = distance;
         this.slope = slope;
         this.routeType = routeType;
@@ -32,11 +32,11 @@ public class Route
         return routeType;
     }
 
-    public int getSlope() {
+    public double getSlope() {
         return slope;
     }
 
-    public void setSlope(int slope) {
+    public void setSlope(double slope) {
         this.slope = slope;
     }
 

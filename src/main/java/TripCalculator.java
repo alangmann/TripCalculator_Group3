@@ -26,19 +26,21 @@ public class TripCalculator {
 
             String[] lines  = line.split(";");
 
+
+
             if(lines[2].equals(r.getTypeOfRoute().Highway))
             {
-                r = new Route(Integer.parseInt(lines[0]), Integer.parseInt(lines[1]), 1, Double.parseDouble(lines[3]));
+                r = new Route(Double.parseDouble(lines[0].replace(',', '.')), Double.parseDouble(lines[1].replace(',', '.')), 1, Double.parseDouble(lines[3].replace(',', '.')));
                 routes.add(r);
             }
             else if (lines[2].equals(r.getTypeOfRoute().CountryRoad))
             {
-                r = new Route(Integer.parseInt(lines[0]), Integer.parseInt(lines[1]), 1.2, Double.parseDouble(lines[3]));
+                r = new Route(Double.parseDouble(lines[0].replace(',', '.')), Double.parseDouble(lines[1].replace(',', '.')), 1.2, Double.parseDouble(lines[3].replace(',', '.')));
                 routes.add(r);
             }
             else
             {
-                r = new Route(Integer.parseInt(lines[0]), Integer.parseInt(lines[1]), 2, Double.parseDouble(lines[3]));
+                r = new Route(Double.parseDouble(lines[0].replace(',', '.')), Double.parseDouble(lines[1].replace(',', '.')), 2, Double.parseDouble(lines[3].replace(',', '.')));
                 routes.add(r);
             }
 
@@ -52,13 +54,14 @@ public class TripCalculator {
     {
         ArrayList<Sprit> spritList = new ArrayList<Sprit>();
 
-        String path = System.getProperty("Usr.src")+File.separator+"main"+File.separator+"resources";
+        String path = System.getProperty("user.dir")+File.separator+"src"+File.separator+"main"+File.separator+"resources"+File.separator+"sprit_db.csv";
         System.out.println(path);
         File f = new File(path);
         BufferedReader br = new BufferedReader(new FileReader(f));
 
         String line = "";
-        while(!(line=br.readLine()).equals(null))
+        String line1=null;
+        while ((line1 = br.readLine()) != null &&!(line=br.readLine()).equals(null))
         {
             //Aufbau= Tag;Diesel;Benzin
             String[] lines = line.split(";");
