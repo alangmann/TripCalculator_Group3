@@ -14,4 +14,13 @@ public class TripCalculatorGUI {
     private JTextField tfCargo;
     private JTextField tfAxles;
 
+    public void fillComboBoxes()
+    {
+        cbAdBlue.addItem("yes");
+        cbAdBlue.addItem("no");
+
+        cbFuel.addItem("Diesel");
+        cbFuel.addItem("Patroleum");
+    }
+
 }
