@@ -37,9 +37,9 @@ public class TripCalculatorTest {
     public void testCalculateConsumption() throws Exception
     {
         Route r = new Route(10, 5, 1, 5);
-        Truck t = new Truck(10000, Vehicle.fuelType.PATROL, 3126);
+        Truck t = new Truck(10000, Vehicle.fuelType.PATROL, 3126, 6, true);
         assertThat(trip.calculateConsumption(r, t), equalTo(6.625000000000001));
-        // Mit 6,625 wird ein Fehler zurückgegeben.
+        // Mit 6,625 als erwartetes Ergebnis wird ein Fehler zurückgegeben.
     }
 
     @Test

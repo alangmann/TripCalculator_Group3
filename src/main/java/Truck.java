@@ -3,7 +3,12 @@
  */
 public class Truck extends Vehicle
 {
-    public Truck(int cargo, fuelType typeOfFuel, double averageConsumption) {
+    int axels;
+    boolean adBlue;
+
+    public Truck(int cargo, fuelType typeOfFuel, double averageConsumption, int axels, boolean adBlue) {
         super(cargo, typeOfFuel, averageConsumption);
+        this.axels = axels;
+        this.adBlue = adBlue;
     }
 }
