@@ -35,6 +35,8 @@ public class TripCalculatorGUI {
         cbFuel.setSelectedIndex(0);
         cbFuel.addItem("PATROL");
 
+
+
         btAccept.addActionListener((java.awt.event.ActionListener) this);
     }
 
