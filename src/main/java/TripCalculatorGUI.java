@@ -49,7 +49,7 @@ public class TripCalculatorGUI {
                     if (cbAdBlue.getSelectedItem().equals("true")) {
                         Truck t = new Truck(Integer.parseInt(tfCargo.getText()), Vehicle.fuelType.PATROL, Double.parseDouble(tfConsumption.getText()), Integer.parseInt(tfAxles.getText()), true);
                     } else {
-                        Truck t = new Truck(Integer.parseInt(tfCargo.getText()), Vehicle.fuelType.PATROL, Double.parseDouble(tfConsumption.getText()), Integer.parseInt(tfAxles.getText()), true);
+                        Truck t = new Truck(Integer.parseInt(tfCargo.getText()), Vehicle.fuelType.PATROL, Double.parseDouble(tfConsumption.getText()), Integer.parseInt(tfAxles.getText()), false);
                     }
                 } else {
                     JOptionPane.showMessageDialog(null, "Nicht alles ausgewählt");
