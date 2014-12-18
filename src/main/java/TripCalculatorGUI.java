@@ -26,10 +26,12 @@ public class TripCalculatorGUI {
         vehicleGroup.add(rbCar);
         vehicleGroup.add(rbTruck);
 
-        cbAdBlue.addItem("yes");
-        cbAdBlue.addItem("no");
+        cbAdBlue.addItem("true");
+        cbAdBlue.setSelectedIndex(0);
+        cbAdBlue.addItem("false");
 
         cbFuel.addItem("DIESEL");
+        cbFuel.setSelectedIndex(0);
         cbFuel.addItem("PATROL");
 
         btAccept.addActionListener((java.awt.event.ActionListener) this);
@@ -42,13 +44,16 @@ public class TripCalculatorGUI {
             if(cbFuel.getSelectedItem().equals("DIESEL")) {
                 Car c = new Car(Integer.parseInt(tfCargo.getText()), Vehicle.fuelType.DIESEL, Double.parseDouble(tfConsumption.getText()));
             }
-            else if(cbFuel.getSelectedItem().equals("PATROL"))
-            {
-                Car c = new Car(Integer.parseInt(tfCargo.getText()), Vehicle.fuelType.PATROL, Double.parseDouble(tfConsumption.getText()));
-            }
-            else
-            {
-                JOptionPane.showMessageDialog(null, "Nicht alles ausgewählt");
+            else {
+                if (cbFuel.getSelectedItem().equals("PATROL")) {
+                    if (cbAdBlue.getSelectedItem().equals("true")) {
+                        Truck t = new Truck(Integer.parseInt(tfCargo.getText()), Vehicle.fuelType.PATROL, Double.parseDouble(tfConsumption.getText()), Integer.parseInt(tfAxles.getText()), true);
+                    } else {
+                        Truck t = new Truck(Integer.parseInt(tfCargo.getText()), Vehicle.fuelType.PATROL, Double.parseDouble(tfConsumption.getText()), Integer.parseInt(tfAxles.getText()), true);
+                    }
+                } else {
+                    JOptionPane.showMessageDialog(null, "Nicht alles ausgewählt");
+                }
             }
         }
 
