@@ -79,14 +79,21 @@ public class TripCalculator {
 
         // Berechnung: km x CO2 x slope x Factor of Route type
 
-        double comsumption;
+        double comsumption=0;
         if(r.getSlope()<=-5)
         {
             comsumption = r.getDistance() * 0 * r.getSlope() * r.getRouteType();
         }
         else {
+            if(v instanceof Car)
+            {
+                comsumption = r.getDistance() * co2 * r.getSlope() * r.getRouteType() + v.getCargo()/100*0.5;
+            }
+            else
+            {
+                comsumption = r.getDistance() * co2 * r.getSlope() * r.getRouteType() + v.getCargo()/100*0.05;
+            }
 
-            comsumption = r.getDistance() * co2 * r.getSlope() * r.getRouteType();
         }
 
         return comsumption;
