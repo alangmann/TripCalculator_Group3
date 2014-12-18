@@ -73,7 +73,7 @@ public class TripCalculator {
 
     }
 
-    public double calculateComsumption(Route r)
+    public double calculateComsumption(Route r, Vehicle v)
     {
         double co2 = 0.1325;
 
@@ -85,6 +85,7 @@ public class TripCalculator {
             comsumption = r.getDistance() * 0 * r.getSlope() * r.getRouteType();
         }
         else {
+
             comsumption = r.getDistance() * co2 * r.getSlope() * r.getRouteType();
         }
 
