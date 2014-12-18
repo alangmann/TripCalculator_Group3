@@ -73,30 +73,31 @@ public class TripCalculator {
 
     }
 
-    public double calculateComsumption(Route r, Vehicle v)
+    public double calculateConsumption(Route r, Vehicle v)
     {
         double co2 = 0.1325;
 
         // Berechnung: km x CO2 x slope x Factor of Route type
         
-        double comsumption=0;
+        double consumption=0;
         if(r.getSlope()<=-5)
         {
-            comsumption = r.getDistance() * 0 * r.getSlope() * r.getRouteType();
+            consumption = r.getDistance() * 0 * r.getSlope() * r.getRouteType();
         }
         else {
             if(v instanceof Car)
             {
-                comsumption = r.getDistance() * co2 * r.getSlope() * r.getRouteType() + v.getCargo()/100*0.5;
+                // Calculation for car
+                consumption = r.getDistance() * co2 * r.getSlope() * r.getRouteType() + v.getCargo()/100*0.5;
             }
             else
-            {
-                comsumption = r.getDistance() * co2 * r.getSlope() * r.getRouteType() + v.getCargo()/100*0.05;
+            {   // Calculation for truck
+                consumption = r.getDistance() * co2 * r.getSlope() * r.getRouteType() + v.getCargo()/100*0.05;
             }
 
         }
 
-        return comsumption;
+        return consumption;
     }
 
 
