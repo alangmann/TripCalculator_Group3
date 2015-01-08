@@ -100,5 +100,16 @@ public class TripCalculator {
         return consumption;
     }
 
+    // Methode unvollständig!!
+    public double calculateCostOfRoute(Route r, Vehicle v, String dayOfWeek, double slope, int cargo, Sprit s)
+    {
+        double cost=0.0;
+        double averageC = 35;
+        cost = r.getDistance()*(averageC/100)*s.getDiesel()+r.getSpecialFee();
+
+
+        return cost;
+    }
+
 
 }

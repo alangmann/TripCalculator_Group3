@@ -15,6 +15,8 @@ public class TripCalculatorGUI {
     private JComboBox cbFuel;
     private JTextField tfCargo;
     private JTextField tfAxles;
+    private JComboBox cbDays;
+    private JTextField tfSlope;
     private ButtonGroup vehicleGroup;
 
 
