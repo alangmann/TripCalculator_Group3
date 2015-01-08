@@ -50,7 +50,7 @@ public class TripCalculator {
 
     }
 
-    public void readSpritDB() throws Exception
+    public ArrayList<Sprit> readSpritDB() throws Exception
     {
         ArrayList<Sprit> spritList = new ArrayList<Sprit>();
 
@@ -70,6 +70,7 @@ public class TripCalculator {
                 spritList.add(new Sprit(lines[0], Double.parseDouble(lines[1]), Double.parseDouble(lines[2])));
             }
         }
+        return spritList;
 
     }
 
@@ -101,14 +102,37 @@ public class TripCalculator {
     }
 
     // Methode unvollständig!!
-    public double calculateCostOfRoute(Route r, Vehicle v, String dayOfWeek, double slope, int cargo, Sprit s)
+    public double calculateCostOfRoute(Route r, Vehicle v, String dayOfWeek, double slope, int cargo, String typeOfFuel)
     {
-        double cost=0.0;
-        double averageC = 35;
-        cost = r.getDistance()*(averageC/100)*s.getDiesel()+r.getSpecialFee();
+        double spritCost = 0;
+        try
+        {
+            ArrayList<Sprit> spritList = this.readSpritDB();
+            for(Sprit s : spritList)
+            {
+                if(s.getDay().equals(dayOfWeek))
+                {
+                    if(typeOfFuel.equals("DIESEL"))
+                    {
+                        spritCost = s.getDiesel();
+                    }
+                    else spritCost = s.getPatrol();
+                }
+            }
+
+            double cost=0.0;
+            double averageC = 35;
+            cost = r.getDistance()*(averageC/100)*spritCost+r.getSpecialFee();
+
+            return cost;
+        }
+        catch(Exception ex)
+        {
+            System.out.println("Fehler beim Einlesen der SpritDB!");
+        }
 
 
-        return cost;
+        return -1;
     }
 
 

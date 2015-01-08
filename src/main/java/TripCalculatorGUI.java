@@ -59,12 +59,27 @@ public class TripCalculatorGUI {
                 if(cbFuel.getSelectedItem().equals("DIESEL")) {
                     Car c = new Car(Integer.parseInt(tfCargo.getText()), Vehicle.fuelType.DIESEL, Double.parseDouble(tfConsumption.getText()));
                     trip.calculateConsumption(routes.get(0), c);
+
+                    double slope = Double.parseDouble(tfSlope.getText());
+                    String dayOfWeek = cbDays.getSelectedItem().toString();
+                    String typeOfFuel = cbFuel.getSelectedItem().toString();
+                    int cargo = Integer.parseInt(tfCargo.getText());
+
+                    trip.calculateCostOfRoute(routes.get(0), c, dayOfWeek, slope, cargo, typeOfFuel);
+
                 }
                 else {
                     if (cbFuel.getSelectedItem().equals("PATROL")) {
                         if (cbAdBlue.getSelectedItem().equals("true")) {
                             Truck t = new Truck(Integer.parseInt(tfCargo.getText()), Vehicle.fuelType.PATROL, Double.parseDouble(tfConsumption.getText()), Integer.parseInt(tfAxles.getText()), true);
                             trip.calculateConsumption(routes.get(0), t);
+
+                            double slope = Double.parseDouble(tfSlope.getText());
+                            String dayOfWeek = cbDays.getSelectedItem().toString();
+                            String typeOfFuel = cbFuel.getSelectedItem().toString();
+                            int cargo = Integer.parseInt(tfCargo.getText());
+
+                            trip.calculateCostOfRoute(routes.get(0), t, dayOfWeek, slope, cargo, typeOfFuel);
                         } else {
                             Truck t = new Truck(Integer.parseInt(tfCargo.getText()), Vehicle.fuelType.PATROL, Double.parseDouble(tfConsumption.getText()), Integer.parseInt(tfAxles.getText()), false);
                         }
