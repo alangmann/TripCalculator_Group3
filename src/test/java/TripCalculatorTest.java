@@ -2,6 +2,8 @@
 import static org.junit.Assert.*;
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.MatcherAssert.assertThat;
+
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -50,6 +52,16 @@ public class TripCalculatorTest {
         assertThat(trip.calculateConsumption(r,c), equalTo(-0.0));
 
         //Anscheinend ergibt es ein -0.0 da eine negative Zahl dabei ist? Mit 0.0 wird ein Fehler zurückgegeben.
+    }
+
+    @Test
+    public void testCalculateCostofRoute() throws Exception
+    {
+        Route r = new Route(10, 5, 1, 5);
+        Car c = new Car(1000, Vehicle.fuelType.DIESEL, 123);
+
+        //(Route r, Vehicle v, String dayOfWeek, double slope, int cargo, String typeOfFuel)
+        Assert.assertThat(trip.calculateCostOfRoute(r, c, "Monday", 1.2, 123, Vehicle.fuelType.DIESEL.toString()), equalTo(-1.0));
     }
 }
 
