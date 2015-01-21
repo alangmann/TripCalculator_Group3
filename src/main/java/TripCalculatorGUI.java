@@ -1,5 +1,6 @@
 import javax.swing.*;
 import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
 /**
@@ -39,10 +40,16 @@ public class TripCalculatorGUI {
 
 
 
-        btAccept.addActionListener((java.awt.event.ActionListener) this);
+        btAccept.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                onAccept();
+            }
+        });
     }
 
-    public void actionPerformed(ActionEvent e) {
+    public void onAccept()
+    {
         TripCalculator trip = new TripCalculator();
         ArrayList<Route> routes;
         try {
@@ -93,7 +100,5 @@ public class TripCalculatorGUI {
             JOptionPane.showMessageDialog(null, ex.toString());
         }
 
-
     }
-
 }
