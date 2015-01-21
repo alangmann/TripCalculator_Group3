@@ -67,7 +67,7 @@ public class TripCalculator {
             String[] lines = line.split(";");
             if(!lines[1].equals("Diesel"))
             {
-                spritList.add(new Sprit(lines[0], Double.parseDouble(lines[1]), Double.parseDouble(lines[2])));
+                spritList.add(new Sprit(lines[0], Double.parseDouble(lines[1].replace(',','.')), Double.parseDouble(lines[2].replace(',','.'))));
             }
         }
         return spritList;
