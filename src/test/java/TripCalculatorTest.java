@@ -60,5 +60,13 @@ public class TripCalculatorTest {
         //(Route r, Vehicle v, String dayOfWeek, double slope, int cargo, String typeOfFuel)
         Assert.assertThat(trip.calculateCostOfRoute(r, c, "Monday", 1.2, 123, Vehicle.fuelType.DIESEL.toString()), equalTo(-1.0));
     }
+
+    @Test
+    public void testConsumptionWithNormalRoute() throws Exception
+    {
+        Route r = new Route(10, 5, 2, 5);
+        Car c = new Car(1000, Vehicle.fuelType.DIESEL, 123);
+        assertThat(trip.calculateConsumption(r,c), equalTo(16.25));
+    }
 }
 
