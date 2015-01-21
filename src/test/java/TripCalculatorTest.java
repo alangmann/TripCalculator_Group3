@@ -24,15 +24,14 @@ public class TripCalculatorTest {
     {
         ArrayList<Route> routes =  trip.readRoutes();
 
-        for (int i = 0; i < routes.size(); i++)
-        {
-            System.out.println(routes.get(i).toString());
-        }
+        assertThat(routes.get(1).getDistance()+";"+routes.get(1).getSlope() +";"+routes.get(1).getTypeOfRoute().toString()+";"+routes.get(1).getSpecialFee(), equalTo("5;-300;CountryRoad;0"));
     }
 
     @Test
     public void testReadSpritDB() throws Exception {
-        trip.readSpritDB();
+
+        ArrayList<Sprit> spritList = trip.readSpritDB();
+        assertThat(spritList.get(1).getDay()+";"+spritList.get(1).getDiesel() +";"+spritList.get(1).getPatrol(), equalTo("Wednesday;1.299;1.387"));
     }
 
     @Test
@@ -60,8 +59,7 @@ public class TripCalculatorTest {
         Route r = new Route(10, 5, 1, 5);
         Car c = new Car(1000, Vehicle.fuelType.DIESEL, 123);
 
-        //(Route r, Vehicle v, String dayOfWeek, double slope, int cargo, String typeOfFuel)
-        Assert.assertThat(trip.calculateCostOfRoute(r, c, "Monday", 1.2, 123, Vehicle.fuelType.DIESEL.toString()), equalTo(-1.0));
+        Assert.assertThat(trip.calculateCostOfRoute(r, c, "Monday", 1.2, 123, Vehicle.fuelType.DIESEL.toString()), equalTo(9.6235));
     }
 }
 
