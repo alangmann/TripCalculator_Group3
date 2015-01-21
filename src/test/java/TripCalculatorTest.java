@@ -22,9 +22,7 @@ public class TripCalculatorTest {
     @Test
     public void testReadRoutes() throws Exception
     {
-        ArrayList<Route> routes =  trip.readRoutes();
-
-        assertThat(routes.get(1).getDistance()+";"+routes.get(1).getSlope() +";"+routes.get(1).getTypeOfRoute().toString()+";"+routes.get(1).getSpecialFee(), equalTo("5;-300;CountryRoad;0"));
+        assertThat(trip.readRoutes().get(0), equalTo(new Route(10,5,1,5)));
     }
 
     @Test
@@ -59,7 +57,8 @@ public class TripCalculatorTest {
         Route r = new Route(10, 5, 1, 5);
         Car c = new Car(1000, Vehicle.fuelType.DIESEL, 123);
 
-        Assert.assertThat(trip.calculateCostOfRoute(r, c, "Monday", 1.2, 123, Vehicle.fuelType.DIESEL.toString()), equalTo(9.6235));
+        //(Route r, Vehicle v, String dayOfWeek, double slope, int cargo, String typeOfFuel)
+        Assert.assertThat(trip.calculateCostOfRoute(r, c, "Monday", 1.2, 123, Vehicle.fuelType.DIESEL.toString()), equalTo(-1.0));
     }
 }
 
