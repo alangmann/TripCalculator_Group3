@@ -1,5 +1,6 @@
 import org.springframework.stereotype.Repository;
 
+import javax.annotation.Resource;
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -24,6 +25,8 @@ public class TripCalculatorGUI {
     private JTextField tfSlope;
     private ButtonGroup vehicleGroup;
 
+    @Resource(name = "TripCalculatorDAO")
+    private TripCalculator trip;
 
     public void initialize() {
         cbAdBlue.removeAllItems();
@@ -50,7 +53,7 @@ public class TripCalculatorGUI {
     }
 
     public void onAccept() {
-        TripCalculator trip = new TripCalculator();
+
         ArrayList<Route> routes;
         try {
             trip.readSpritDB();

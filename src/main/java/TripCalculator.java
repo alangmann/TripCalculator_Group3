@@ -2,15 +2,21 @@
  * Created by andreas.langmann on 12.11.2014.
  */
 
+import org.springframework.stereotype.Repository;
+
 import java.io.File;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.util.ArrayList;
 
+@Repository("TripCalculatorDAO")
 public class TripCalculator {
 
     // TODO: implement me :)
     // test
+
+
+
     public ArrayList<Route> readRoutes() throws Exception {
         ArrayList<Route> routes = new ArrayList<Route>();
         String path = System.getProperty("user.dir") + File.separator + "src" + File.separator + "main" + File.separator + "resources" + File.separator + "routes.csv";
