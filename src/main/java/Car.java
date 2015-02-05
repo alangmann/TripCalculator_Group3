@@ -1,10 +1,9 @@
-import javax.annotation.Resource;
-
 /**
  * Created by Dominik on 27.11.2014.
  */
 
-@Repository("Car")
+@Repository("CarDAO")
+
 public class Car extends Vehicle
 {
 

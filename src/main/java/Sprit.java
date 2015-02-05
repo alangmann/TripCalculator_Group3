@@ -1,6 +1,9 @@
 /**
  * Created by Dominik on 04.12.2014.
  */
+
+@Repository("SpritDAO")
+
 public class Sprit {
     String day;
     double diesel;

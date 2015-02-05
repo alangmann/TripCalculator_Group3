@@ -1,6 +1,9 @@
 /**
  * Created by Dominik on 27.11.2014.
  */
+
+@Repository("VehicleDAO")
+
 public class Vehicle
 {
     private double averageConsumption;

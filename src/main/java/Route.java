@@ -1,6 +1,9 @@
 /**
  * Created by Dominik on 27.11.2014.
  */
+
+@Repository("RouteDAO")
+
 public class Route
 {
     // Beispiel: km;slope;routtype;special fee

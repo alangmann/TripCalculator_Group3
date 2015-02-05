@@ -1,6 +1,8 @@
 /**
  * Created by Dominik on 27.11.2014.
  */
+
+@Repository("TruckDAO")
 public class Truck extends Vehicle
 {
     int axels;
