@@ -5,4 +5,6 @@ package definition;
  */
 public interface TripCalculatorGUIDAO {
     public void initialize();
+
+    public void onAccept();
 }
