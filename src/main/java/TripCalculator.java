@@ -4,6 +4,7 @@
 
 import org.springframework.stereotype.Repository;
 
+import javax.annotation.Resource;
 import java.io.File;
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -15,7 +16,8 @@ public class TripCalculator {
     // TODO: implement me :)
     // test
 
-
+@Resource(name = "RouteDAO")
+Route r;
 
     public ArrayList<Route> readRoutes() throws Exception {
         ArrayList<Route> routes = new ArrayList<Route>();
@@ -27,7 +29,7 @@ public class TripCalculator {
         String line = "";
         String line1 = null;
         while ((line1 = br.readLine()) != null && !(line = br.readLine()).equals(null)) {
-            Route r = new Route();
+
 
             String[] lines = line.split(";");
 
