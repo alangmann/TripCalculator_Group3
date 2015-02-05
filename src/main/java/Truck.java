@@ -1,5 +1,3 @@
-import org.springframework.stereotype.Repository;
-
 /**
  * Created by Dominik on 27.11.2014.
  */
