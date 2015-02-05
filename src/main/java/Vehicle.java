@@ -1,18 +1,15 @@
 import org.springframework.stereotype.Repository;
+
 /**
  * Created by Dominik on 27.11.2014.
  */
 
-@Repository("VehicleDAO")
-
-public class Vehicle
-{
+public class Vehicle {
     private double averageConsumption;
     private fuelType typeOfFuel;
     int cargo;
 
-    public enum fuelType
-    {
+    public enum fuelType {
         DIESEL, PATROL
     }
 

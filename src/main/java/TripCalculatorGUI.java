@@ -1,3 +1,5 @@
+import org.springframework.stereotype.Repository;
+
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -6,6 +8,8 @@ import java.util.ArrayList;
 /**
  * Created by Dominik on 04.12.2014.
  */
+
+@Repository("TripCalculatorGUIDAO")
 public class TripCalculatorGUI {
     private JPanel panel1;
     private JButton btAccept;
@@ -21,9 +25,7 @@ public class TripCalculatorGUI {
     private ButtonGroup vehicleGroup;
 
 
-
-    public void initialize()
-    {
+    public void initialize() {
         cbAdBlue.removeAllItems();
         cbFuel.removeAllItems();
         vehicleGroup = new ButtonGroup();
@@ -39,7 +41,6 @@ public class TripCalculatorGUI {
         cbFuel.addItem("PATROL");
 
 
-
         btAccept.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -48,8 +49,7 @@ public class TripCalculatorGUI {
         });
     }
 
-    public void onAccept()
-    {
+    public void onAccept() {
         TripCalculator trip = new TripCalculator();
         ArrayList<Route> routes;
         try {
@@ -57,13 +57,12 @@ public class TripCalculatorGUI {
         } catch (Exception e1) {
             e1.printStackTrace();
         }
-        try{
+        try {
             routes = trip.readRoutes();
 
 
-            if(vehicleGroup.getSelection().equals(rbCar))
-            {
-                if(cbFuel.getSelectedItem().equals("DIESEL")) {
+            if (vehicleGroup.getSelection().equals(rbCar)) {
+                if (cbFuel.getSelectedItem().equals("DIESEL")) {
                     Car c = new Car(Integer.parseInt(tfCargo.getText()), Vehicle.fuelType.DIESEL, Double.parseDouble(tfConsumption.getText()));
                     trip.calculateConsumption(routes.get(0), c);
 
@@ -74,8 +73,7 @@ public class TripCalculatorGUI {
 
                     trip.calculateCostOfRoute(routes.get(0), c, dayOfWeek, slope, cargo, typeOfFuel);
 
-                }
-                else {
+                } else {
                     if (cbFuel.getSelectedItem().equals("PATROL")) {
                         if (cbAdBlue.getSelectedItem().equals("true")) {
                             Truck t = new Truck(Integer.parseInt(tfCargo.getText()), Vehicle.fuelType.PATROL, Double.parseDouble(tfConsumption.getText()), Integer.parseInt(tfAxles.getText()), true);
@@ -95,8 +93,7 @@ public class TripCalculatorGUI {
                     }
                 }
             }
-        } catch ( Exception ex)
-        {
+        } catch (Exception ex) {
             JOptionPane.showMessageDialog(null, ex.toString());
         }
 

@@ -3,5 +3,6 @@ package definition;
 /**
  * Created by Dominik on 05.02.2015.
  */
-public interface SpritDAO {
+public interface TripCalculatorGUIDAO {
+    public void initialize();
 }

@@ -1,12 +1,12 @@
 import org.springframework.stereotype.Repository;
+
 /**
  * Created by Dominik on 27.11.2014.
  */
 
 @Repository("RouteDAO")
 
-public class Route
-{
+public class Route {
     // Beispiel: km;slope;routtype;special fee
 
     private double distance;
@@ -22,8 +22,7 @@ public class Route
         this.specialFee = specialFee;
     }
 
-    public Route()
-    {
+    public Route() {
 
     }
 
@@ -31,8 +30,7 @@ public class Route
         Highway, CountryRoad, GravelRoad
     }
 
-    public double getRouteType()
-    {
+    public double getRouteType() {
         return routeType;
     }
 
