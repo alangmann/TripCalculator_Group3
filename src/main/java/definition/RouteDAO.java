@@ -5,3 +5,4 @@ package definition;
  */
 public interface RouteDAO {
 }
+
