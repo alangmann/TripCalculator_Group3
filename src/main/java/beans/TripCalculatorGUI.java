@@ -1,3 +1,6 @@
+package beans;
+
+import definition.TripCalculatorGUIDAO;
 import org.springframework.stereotype.Repository;
 
 import javax.annotation.Resource;

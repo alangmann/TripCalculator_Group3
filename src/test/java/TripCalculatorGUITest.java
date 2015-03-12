@@ -1,10 +1,8 @@
-import static org.junit.Assert.*;
-import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.MatcherAssert.assertThat;
 
 
+import beans.TripCalculatorGUI;
 import junit.framework.TestCase;
-import org.junit.Assert;
 import org.junit.Before;
 
 
