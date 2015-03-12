@@ -1,12 +1,12 @@
-/**
+package beans; /**
  * Created by andreas.langmann on 12.11.2014.
  */
 
 import org.springframework.stereotype.Repository;
 
 import javax.annotation.Resource;
-import java.io.File;
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileReader;
 import java.util.ArrayList;
 

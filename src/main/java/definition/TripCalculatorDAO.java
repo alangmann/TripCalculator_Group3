@@ -1,5 +1,9 @@
 package definition;
 
+import beans.Sprit;
+import beans.Route;
+import beans.Vehicle;
+
 import java.util.ArrayList;
 
 /**
